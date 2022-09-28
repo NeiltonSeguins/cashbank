@@ -1,4 +1,5 @@
 import Header from "components/Header";
+import Menu from "components/Menu";
 import GlobalStyle from "./theme/GlobalStyle";
 import ThemeProvider from "./theme/ThemeProvider";
 
@@ -8,6 +9,7 @@ const App = () => {
       <ThemeProvider>
         <GlobalStyle />
         <Header />
+        <Menu />
       </ThemeProvider>
     </>
   );

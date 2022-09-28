@@ -37,7 +37,7 @@ const Container = styled.div`
 `;
 
 const Navbar = styled.nav`
-  width: 30%;
+  width: 28%;
   display: flex;
   align-items: center;
   justify-content: space-between;
