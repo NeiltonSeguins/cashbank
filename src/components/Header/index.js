@@ -1,16 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 import theme from "theme/theme";
-import { ReactComponent as Logo } from "components/Header/logo.svg";
+import { ReactComponent as Logo } from "components/Header/bytebank.svg";
 import Navbar from "./Navbar";
 import { Container } from "components/UI";
 
 const StyledHeader = styled.header`
-  background-color: ${theme.colors.positive.x300};
+  background-color: ${theme.colors.neutral.x999};
   height: 76px;
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+const StyledContainer = styled(Container)`
+  justify-content: space-between;
+  width: 1199px;
 `;
 
 const StyledLogo = styled(Logo)`
@@ -23,10 +28,10 @@ const StyledLogo = styled(Logo)`
 export default function Header() {
   return (
     <StyledHeader>
-      <Container>
-        <StyledLogo color={theme.colors.neutral.x050} />
+      <StyledContainer>
+        <StyledLogo color={theme.colors.positive.x400} />
         <Navbar />
-      </Container>
+      </StyledContainer>
     </StyledHeader>
   );
 }

@@ -11,18 +11,18 @@ const StyledNavbar = styled.nav`
 
 const Text = styled.p`
   font-family: ${theme.typography.fontFamily};
-  color: ${theme.colors.neutral.x050};
+  color: ${theme.colors.positive.x400};
   font-weight: 500;
 `;
 
 const StyledIcone = styled(User)`
   height: ${({ height }) => height || "40px"};
   & path {
-    fill: ${({ color }) => color || `${theme.colors.neutral.x050}`};
+    fill: ${({ color }) => color || `${theme.colors.positive.x400}`};
   }
   & circle {
     fill: ${({ color }) => color || "transparent"};
-    stroke: ${({ color }) => color || `${theme.colors.neutral.x050}`};
+    stroke: ${({ color }) => color || `${theme.colors.positive.x400}`};
   }
 `;
 
