@@ -128,7 +128,7 @@ export const typography = {
     body4: {
       fontWeight: {
         xs: "400",
-        md: "400",
+        md: "600",
       },
       lineHeight: {
         xs: "1.5",
@@ -141,7 +141,7 @@ export const typography = {
     body5: {
       fontWeight: {
         xs: "400",
-        md: "400",
+        md: "600",
       },
       lineHeight: {
         xs: "1.5",

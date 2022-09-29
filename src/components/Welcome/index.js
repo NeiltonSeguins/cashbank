@@ -14,15 +14,15 @@ const StyledDiv = styled.div`
 
 const Title = styled.h1`
   font-family: ${theme.typography.fontFamily};
-  font-size: ${theme.typography.variants.heading3.fontSize.md};
-  font-weight: ${theme.typography.variants.heading3.fontWeight.md};
+  font-size: ${theme.typography.variants.body1.fontSize.md};
+  font-size: ${theme.typography.variants.body1.fontWeight.md};
   color: ${theme.colors.neutral.x050};
 `;
 
 export default function Welcome() {
   return (
     <StyledDiv>
-      <Title>Olá, Joana!</Title>
+      <Title>Olá, Neilton!</Title>
     </StyledDiv>
   );
 }

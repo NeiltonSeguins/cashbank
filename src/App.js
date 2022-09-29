@@ -20,19 +20,17 @@ const Wrapper = styled(Container)`
 
 export default function App() {
   return (
-    <>
-      <ThemeProvider>
-        <GlobalStyle />
-        <Header />
-        <StyledContainer>
-          <Menu />
-          <Wrapper>
-            <Welcome />
-            <Transacao />
-          </Wrapper>
-          <Extrato />
-        </StyledContainer>
-      </ThemeProvider>
-    </>
+    <ThemeProvider>
+      <GlobalStyle />
+      <Header />
+      <StyledContainer>
+        <Menu />
+        <Wrapper>
+          <Welcome />
+          <Transacao />
+        </Wrapper>
+        <Extrato />
+      </StyledContainer>
+    </ThemeProvider>
   );
 }

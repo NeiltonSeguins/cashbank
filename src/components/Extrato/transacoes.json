@@ -1,0 +1,48 @@
+[
+  {
+    "mes": "Setembro",
+    "transacoes": [
+      {
+        "tipoTransacao": "Pagamento",
+        "descricao": "Cantina Roma",
+        "valorPagamento": "R$ 36,00",
+        "dataPagamento": "02/09"
+      },
+      {
+        "tipoTransacao": "Pagamento",
+        "descricao": "Farmácia Cura",
+        "valorPagamento": "R$ 36,00",
+        "dataPagamento": "02/09"
+      }
+    ]
+  },
+  {
+    "mes": "Outubro",
+    "transacoes": [
+      {
+        "tipoTransacao": "Pagamento",
+        "descricao": "Cantina Cura",
+        "valorPagamento": "R$ 36,00",
+        "dataPagamento": "02/10"
+      },
+      {
+        "tipoTransacao": "Pagamento",
+        "descricao": "Cantina Cura",
+        "valorPagamento": "R$ 36,00",
+        "dataPagamento": "02/10"
+      },
+      {
+        "tipoTransacao": "Pagamento",
+        "descricao": "Transferência efetuada",
+        "valorPagamento": "R$ 36,00",
+        "dataPagamento": "02/10"
+      },
+      {
+        "tipoTransacao": "Saldo",
+        "descricao": "Transferência recebida",
+        "valorPagamento": "R$ 36,00",
+        "dataPagamento": "02/10"
+      }
+    ]
+  }
+]

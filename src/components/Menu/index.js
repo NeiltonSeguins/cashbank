@@ -33,7 +33,7 @@ const Item = styled.li`
   }
 `;
 
-const StyledDivider = styled.div`
+export const StyledDivider = styled.div`
   width: 90%;
   height: 1px;
   background-color: ${theme.colors.neutral.x900};
