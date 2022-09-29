@@ -1,3 +1,4 @@
+import { Container } from "components/UI";
 import React from "react";
 import styled from "styled-components";
 import theme from "theme/theme";
@@ -28,10 +29,8 @@ const Item = styled.li`
   cursor: pointer;
 `;
 
-const StyledContainer = styled.div`
-  width: 1199px;
+const StyledDiv = styled(Container)`
   height: 84vh;
-  margin: 0 auto;
 `;
 
 const StyledDivider = styled.div`
@@ -43,7 +42,7 @@ const StyledDivider = styled.div`
 
 export default function Menu() {
   return (
-    <StyledContainer>
+    <StyledDiv>
       <StyledMenu>
         {listaMenu.map((item, key) => {
           return (
@@ -54,6 +53,6 @@ export default function Menu() {
           );
         })}
       </StyledMenu>
-    </StyledContainer>
+    </StyledDiv>
   );
 }
