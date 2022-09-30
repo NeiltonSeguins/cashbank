@@ -2,6 +2,8 @@ import { Container } from "components/UI";
 import styled from "styled-components";
 import theme from "theme/theme";
 import { ReactComponent as Ilustracao } from "./ilustracao.svg";
+import { ReactComponent as DetalheSup } from "./detalhe-sup.svg";
+import { ReactComponent as DetalheInf } from "./detalhe-inf.svg";
 
 const StyledContainer = styled(Container)`
   flex-direction: column;
@@ -24,6 +26,24 @@ const StyledDiv = styled.div`
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   font-family: ${theme.typography.fontFamily};
   display: flex;
+  align-items: center;
+  position: relative;
+`;
+
+const StyledDetalheSup = styled(DetalheSup)`
+  height: ${({ height }) => height || "200px"};
+  width: ${({ width }) => width || "200px"};
+  position: absolute;
+  top: 0;
+  right: 0;
+`;
+
+const StyledDetalheInf = styled(DetalheInf)`
+  height: ${({ height }) => height || "200px"};
+  width: ${({ width }) => width || "200px"};
+  position: absolute;
+  bottom: 0;
+  left: 0;
 `;
 
 const Title = styled.h3`
@@ -38,6 +58,7 @@ const StyledForm = styled.form`
   width: 90%;
   height: 90%;
   padding-top: 24px;
+  z-index: 1;
 `;
 
 const StyledSelect = styled.select`
@@ -85,6 +106,7 @@ const StyledButton = styled.button`
 export default function Transacao() {
   return (
     <StyledDiv>
+      <StyledDetalheSup />
       <StyledContainer>
         <Title>Nova transação</Title>
         <StyledForm>
@@ -103,6 +125,7 @@ export default function Transacao() {
         </StyledForm>
       </StyledContainer>
       <StyledIlustracao />
+      <StyledDetalheInf />
     </StyledDiv>
   );
 }

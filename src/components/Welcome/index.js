@@ -1,4 +1,6 @@
 import { ReactComponent as Ilustracao } from "./ilustracao.svg";
+import { ReactComponent as DetalheSup } from "./detalhe-sup.svg";
+import { ReactComponent as DetalheInf } from "./detalhe-inf.svg";
 import styled from "styled-components";
 import theme from "theme/theme";
 
@@ -9,11 +11,11 @@ const StyledDiv = styled.div`
   margin-top: 1rem;
   border-radius: 8px;
   padding: 24px;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   font-family: ${theme.typography.fontFamily};
+  position: relative;
 `;
 
 const Data = styled.p`
@@ -24,6 +26,23 @@ const Data = styled.p`
 const StyledIlustracao = styled(Ilustracao)`
   height: ${({ height }) => height || "283px"};
   width: ${({ width }) => width || "229px"};
+  z-index: 1;
+`;
+
+const StyledDetalheSup = styled(DetalheSup)`
+  height: ${({ height }) => height || "200px"};
+  width: ${({ width }) => width || "200px"};
+  position: absolute;
+  top: 0;
+  right: 0;
+`;
+
+const StyledDetalheInf = styled(DetalheInf)`
+  height: ${({ height }) => height || "200px"};
+  width: ${({ width }) => width || "200px"};
+  position: absolute;
+  bottom: 0;
+  left: 0;
 `;
 
 const Title = styled.h1`
@@ -47,6 +66,8 @@ export default function Welcome() {
 
   return (
     <StyledDiv>
+      <StyledDetalheSup />
+      <StyledDetalheInf />
       <Title>Olá, Neilton!</Title>
       <Data>{`${
         diasDaSemana[hoje.getDay()]
