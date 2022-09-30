@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import theme from "theme/theme";
 import { ReactComponent as Logo } from "components/Header/bytebank.svg";

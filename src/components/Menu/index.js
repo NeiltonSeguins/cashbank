@@ -14,7 +14,7 @@ const StyledMenu = styled.ul`
   list-style: none;
   margin-top: 1rem;
   width: 180px;
-  height: 84vh;
+  height: 90vh;
   border-radius: 8px;
   padding: 24px;
   background-color: ${theme.colors.neutral.x050};

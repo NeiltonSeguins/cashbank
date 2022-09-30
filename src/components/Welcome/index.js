@@ -1,4 +1,3 @@
-import React from "react";
 import { ReactComponent as Ilustracao } from "./ilustracao.svg";
 import styled from "styled-components";
 import theme from "theme/theme";
@@ -6,7 +5,7 @@ import theme from "theme/theme";
 const StyledDiv = styled.div`
   background-color: ${theme.colors.positive.x400};
   width: 690px;
-  height: 320px;
+  height: 50%;
   margin-top: 1rem;
   border-radius: 8px;
   padding: 24px;

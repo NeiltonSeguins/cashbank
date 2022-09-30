@@ -6,42 +6,53 @@
         "tipoTransacao": "Pagamento",
         "descricao": "Cantina Roma",
         "valorPagamento": "R$ 36,00",
-        "dataPagamento": "02/09"
+        "dataPagamento": "04/09"
       },
       {
         "tipoTransacao": "Pagamento",
         "descricao": "Farmácia Cura",
-        "valorPagamento": "R$ 36,00",
+        "valorPagamento": "R$ 56,00",
         "dataPagamento": "02/09"
       }
     ]
   },
   {
-    "mes": "Outubro",
+    "mes": "Agosto",
     "transacoes": [
       {
         "tipoTransacao": "Pagamento",
-        "descricao": "Cantina Cura",
-        "valorPagamento": "R$ 36,00",
-        "dataPagamento": "02/10"
+        "descricao": "Farmácia Cura",
+        "valorPagamento": "R$ 50,00",
+        "dataPagamento": "30/08"
       },
       {
         "tipoTransacao": "Pagamento",
-        "descricao": "Cantina Cura",
-        "valorPagamento": "R$ 36,00",
-        "dataPagamento": "02/10"
+        "descricao": "Cantina Roma",
+        "valorPagamento": "R$ 120,00",
+        "dataPagamento": "27/08"
       },
       {
         "tipoTransacao": "Pagamento",
         "descricao": "Transferência efetuada",
-        "valorPagamento": "R$ 36,00",
-        "dataPagamento": "02/10"
+        "valorPagamento": "R$ 40,00",
+        "dataPagamento": "23/08"
       },
       {
         "tipoTransacao": "Saldo",
         "descricao": "Transferência recebida",
-        "valorPagamento": "R$ 36,00",
-        "dataPagamento": "02/10"
+        "valorPagamento": "R$ 59,00",
+        "dataPagamento": "20/08"
+      }
+    ]
+  },
+  {
+    "mes": "Julho",
+    "transacoes": [
+      {
+        "tipoTransacao": "Pagamento",
+        "descricao": "Farmácia Cura",
+        "valorPagamento": "R$ 87,00",
+        "dataPagamento": "28/07"
       }
     ]
   }
