@@ -59,7 +59,7 @@ export default function Transacao() {
         <StyledTitle>Nova transação</StyledTitle>
         <StyledForm>
           <StyledSelect>
-            <option value="Selecione o tipo de transação" selected>
+            <option defaultValue="Selecione o tipo de transação">
               Selecione o tipo de transação
             </option>
             <option value="Transferência">Transferência</option>

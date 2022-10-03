@@ -21,12 +21,12 @@ const StyledMenu = styled(StyledLista)`
 export default function Menu() {
   return (
     <StyledMenu>
-      {listaMenu.map((item, key) => {
+      {listaMenu.map((item, index) => {
         return (
-          <>
-            <StyledItem key={key}>{item}</StyledItem>
-            {key !== listaMenu.length - 1 && <StyledDivider />}
-          </>
+          <div key={item}>
+            <StyledItem>{item}</StyledItem>
+            {index !== listaMenu.length - 1 && <StyledDivider/>}
+          </div>
         );
       })}
     </StyledMenu>
