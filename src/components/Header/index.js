@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import theme from "theme/theme";
 import { ReactComponent as Logo } from "components/Header/bytebank.svg";
-import { Container } from "components/UI";
+import { Container } from "theme/UI";
 import Navbar from "./Navbar";
 
 const StyledHeader = styled.header`

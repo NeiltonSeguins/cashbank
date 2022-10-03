@@ -1,19 +1,13 @@
 import styled from "styled-components";
 import theme from "theme/theme";
 import { ReactComponent as User } from "components/Header/user.svg";
+import { StyledParagraph } from "theme/UI";
 
 const StyledNavbar = styled.nav`
   width: 282px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-`;
-
-const Text = styled.p`
-  font-family: ${theme.typography.fontFamily};
-  font-size: ${theme.typography.variants.body3.fontSize.xs};
-  color: ${theme.colors.positive.x400};
-  font-weight: 500;
 `;
 
 const StyledIcone = styled(User)`
@@ -31,7 +25,7 @@ const StyledIcone = styled(User)`
 export default function Navbar() {
   return (
     <StyledNavbar>
-      <Text>Neilton dos Santos Seguins Costa</Text>
+      <StyledParagraph>Neilton dos Santos Seguins Costa</StyledParagraph>
       <StyledIcone />
     </StyledNavbar>
   );

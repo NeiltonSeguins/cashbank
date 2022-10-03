@@ -1,37 +1,23 @@
-import { StyledDivider } from "components/Menu";
+import {
+  StyledDiv,
+  StyledDivider,
+  StyledLista,
+  StyledParagraph,
+  StyledTitle,
+} from "theme/UI";
 import styled from "styled-components";
 import theme from "theme/theme";
 import extrato from "./transacoes";
 
-const StyledDiv = styled.div`
-  background-color: ${theme.colors.neutral.x050};
+const Box = styled(StyledDiv)`
   width: 282px;
-  margin-top: 1rem;
-  border-radius: 8px;
-  padding: 24px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `;
 
-const Title = styled.h2`
-  font-family: ${theme.typography.fontFamily};
-  font-size: ${theme.typography.variants.heading3.fontSize.xs};
-  font-weight: ${theme.typography.variants.heading3.fontWeight.xs};
-  color: ${theme.colors.neutral.x900};
-`;
-
-const Paragraph = styled.p`
-  font-family: ${theme.typography.fontFamily};
+const Paragraph = styled(StyledParagraph)`
   font-size: ${theme.typography.variants.body4.fontSize.xs};
   font-weight: ${theme.typography.variants.body4.fontWeight.md};
-  color: ${theme.colors.positive.x400};
   margin-top: 0.8rem;
   margin-bottom: 0.3rem;
-`;
-
-const Lista = styled.ul`
-  list-style: none;
-  font-family: ${theme.typography.fontFamily};
-  font-size: ${theme.typography.variants.body3.fontSize.xs};
 `;
 
 const Item = styled.div`
@@ -46,35 +32,40 @@ const Divider = styled(StyledDivider)`
   background-color: ${theme.colors.positive.x100};
 `;
 
-const Text = styled.h3`
+const Text = styled(StyledTitle)`
   margin-top: 0.4rem;
+  font-size: ${theme.typography.variants.heading4.fontSize.xs};
 `;
 
 export default function Extrato() {
   return (
-    <StyledDiv>
-      <Title>Extrato</Title>
-      {extrato.map((item) => {
+    <Box>
+      <StyledTitle>Extrato</StyledTitle>
+      {extrato.map((item, index) => {
         return (
-          <>
+          <div key={index}>
             <Paragraph>{item.mes}</Paragraph>
-            <Lista>
-              {item.transacoes.map((transacao, index) => {
+            <StyledLista>
+              {item.transacoes.map((transacao) => {
                 return (
-                  <li key={index}>
+                  <li key={transacao.id}>
                     <Item>
-                      <p>{transacao.descricao}</p>
+                      <p>{transacao.tipoTransacao}</p>
                       <span>{transacao.dataPagamento}</span>
                     </Item>
-                    <Text>{transacao.valorPagamento}</Text>
+                    {transacao.tipoTransacao === "Transferência" ? (
+                      <Text>{`- ${transacao.valorPagamento}`}</Text>
+                    ) : (
+                      <Text>{transacao.valorPagamento}</Text>
+                    )}
                     {index !== item.transacoes.length - 1 && <Divider />}
                   </li>
                 );
               })}
-            </Lista>
-          </>
+            </StyledLista>
+          </div>
         );
       })}
-    </StyledDiv>
+    </Box>
   );
 }

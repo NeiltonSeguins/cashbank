@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
   }
   body {
+    font-family: ${theme.typography.fontFamily};
     display: flex;
     flex: 1;
     flex-direction: column;

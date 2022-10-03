@@ -1,26 +1,31 @@
+import styled from "styled-components";
+import theme from "theme/theme";
+import { Container, StyledDiv, StyledParagraph } from "theme/UI";
 import { ReactComponent as Ilustracao } from "./ilustracao.svg";
 import { ReactComponent as DetalheSup } from "./detalhe-sup.svg";
 import { ReactComponent as DetalheInf } from "./detalhe-inf.svg";
-import styled from "styled-components";
-import theme from "theme/theme";
+import Saldo from "./Saldo";
 
-const StyledDiv = styled.div`
+const Box = styled(StyledDiv)`
   background-color: ${theme.colors.positive.x400};
   width: 690px;
   height: 50%;
-  margin-top: 1rem;
-  border-radius: 8px;
-  padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-family: ${theme.typography.fontFamily};
   position: relative;
 `;
 
-const Data = styled.p`
+const Wrapper = styled(Container)`
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const Data = styled(StyledParagraph)`
   font-size: ${theme.typography.variants.body3.fontSize.xs};
   color: ${theme.colors.neutral.x050};
+  margin: 0.8rem 0;
 `;
 
 const StyledIlustracao = styled(Ilustracao)`
@@ -52,9 +57,9 @@ const Title = styled.h1`
 `;
 
 export default function Welcome() {
-  const data = Date.now();
-  const hoje = new Date(data);
-  const diasDaSemana = [
+  const date = Date.now();
+  const today = new Date(date);
+  const dayOfWeek = [
     "Domingo",
     "Segunda-feira",
     "Terça-feira",
@@ -65,14 +70,17 @@ export default function Welcome() {
   ];
 
   return (
-    <StyledDiv>
+    <Box>
       <StyledDetalheSup />
       <StyledDetalheInf />
       <Title>Olá, Neilton!</Title>
       <Data>{`${
-        diasDaSemana[hoje.getDay()]
-      }, ${hoje.toLocaleDateString()}`}</Data>
-      <StyledIlustracao height="190px" />
-    </StyledDiv>
+        dayOfWeek[today.getDay()]
+      }, ${today.toLocaleDateString()}`}</Data>
+      <Wrapper>
+        <StyledIlustracao height="190px" />
+        <Saldo />
+      </Wrapper>
+    </Box>
   );
 }
