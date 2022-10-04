@@ -13,6 +13,8 @@ import {
 import { ReactComponent as Ilustracao } from "./ilustracao.svg";
 import { ReactComponent as DetalheSup } from "./detalhe-sup.svg";
 import { ReactComponent as DetalheInf } from "./detalhe-inf.svg";
+import { useContext, useState } from "react";
+import { MyContext } from "providers/provider";
 
 const StyledContainer = styled(Container)`
   flex-direction: column;
@@ -52,13 +54,58 @@ const StyledDetalheInf = styled(DetalheInf)`
 `;
 
 export default function Transacao() {
+  const { transacao, setTransacao } = useContext(MyContext);
+  const [valor, setValor] = useState(0);
+  const [tipoTransacao, setTipoTransacao] = useState(0);
+
+  const handleChange = (e) => {
+    if (e.target.value !== " ") {
+      const novoValor = Number(e.target.value);
+      setValor(novoValor);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setTimeout(() => {
+      if (tipoTransacao.tipo === "Selecione um tipo de transação") {
+        alert("Selecione um tipo de transação");
+      } else if (tipoTransacao.tipo === "Depósito") {
+        alert("Depósito realizado com sucesso!");
+        setTransacao({ valor: transacao.valor + valor });
+      } else if (
+        tipoTransacao.tipo === "Transferência" &&
+        transacao.valor > 0
+      ) {
+        alert("Transferência realizada com sucesso!");
+        setTransacao({ valor: transacao.valor - valor });
+      } else if (
+        tipoTransacao.tipo === "Transferência" &&
+        transacao.valor <= 0
+      ) {
+        alert("Saldo insuficiente!");
+      } else if (
+        tipoTransacao.tipo === "Transferência" &&
+        valor > transacao.valor
+      ) {
+        alert("Saldo insuficiente");
+      }
+    }, 1000);
+  };
+
   return (
     <Box>
       <StyledDetalheSup />
       <StyledContainer>
         <StyledTitle>Nova transação</StyledTitle>
-        <StyledForm>
-          <StyledSelect>
+        <StyledForm onSubmit={(e) => handleSubmit(e)}>
+          <StyledSelect
+            onChange={(e) => {
+              console.log("mudou");
+              setTipoTransacao({ tipo: e.target.value });
+            }}
+          >
             <option defaultValue="Selecione o tipo de transação">
               Selecione o tipo de transação
             </option>
@@ -66,8 +113,12 @@ export default function Transacao() {
             <option value="Depósito">Depósito</option>
           </StyledSelect>
           <StyledLabel>Valor</StyledLabel>
-          <StyledInput placeholder="00,00"></StyledInput>
-          <StyledButton>Realizar transação</StyledButton>
+          <StyledInput
+            placeholder="00,00"
+            type="number"
+            onChange={(e) => handleChange(e)}
+          />
+          <StyledButton type="submit">Realizar transação</StyledButton>
         </StyledForm>
       </StyledContainer>
       <StyledIlustracao />

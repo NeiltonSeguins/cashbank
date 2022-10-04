@@ -6,6 +6,7 @@ import Menu from "components/Menu";
 import Transacao from "components/Transacao";
 import Welcome from "components/Welcome";
 import { Container } from "theme/UI";
+import { MyProvider } from "providers/provider";
 
 const StyledContainer = styled(Container)`
   margin-top: 1rem;
@@ -20,7 +21,7 @@ const Wrapper = styled(Container)`
 
 export default function App() {
   return (
-    <>
+    <MyProvider>
       <GlobalStyle />
       <Header />
       <StyledContainer>
@@ -31,6 +32,6 @@ export default function App() {
         </Wrapper>
         <Extrato />
       </StyledContainer>
-    </>
+    </MyProvider>
   );
 }

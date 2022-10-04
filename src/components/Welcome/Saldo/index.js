@@ -1,8 +1,9 @@
-import React from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 import theme from "theme/theme";
 import { ReactComponent as Icon } from "./eye-icon.svg";
 import { Container, StyledDivider, StyledParagraph } from "theme/UI";
+import { MyContext } from "providers/provider";
 
 const Box = styled(Container)`
   flex-direction: column;
@@ -45,6 +46,8 @@ const Valor = styled(StyledParagraph)`
 `;
 
 export default function Saldo() {
+  const { transacao } = useContext(MyContext);
+
   return (
     <Box>
       <Wrapper>
@@ -53,7 +56,7 @@ export default function Saldo() {
       </Wrapper>
       <Divider />
       <Text>Conta corrente</Text>
-      <Valor>R$ 2.500,00</Valor>
+      <Valor>{`R$ ${transacao.valor}`}</Valor>
     </Box>
   );
 }
